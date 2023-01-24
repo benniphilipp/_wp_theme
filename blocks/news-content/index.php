@@ -31,7 +31,7 @@ $images = get_field('images');
 
 <div class="single_main_content">
     <div class="wp-block-columns alignwide">
-        <div class="container <?php echo esc_attr($className); ?>">
+        <div class="container-xxl <?php echo esc_attr($className); ?>">
             <div class="row">
                 <div class="col-lg-8">
                     <div class="single_main_content_left">
@@ -46,10 +46,13 @@ $images = get_field('images');
                 <div class="col-lg-4">
                     <div class="single_main_content_right">
                         <?php
-                        if(!empty($images)){
-                            foreach ($images as $k => $v) {
-                                echo "<div class='single_main_content_right_img' style='background-image: url(" . $v['image']['url'] . ")'></div>";
-                            }
+                        // foreach ($images as $k => $v) {
+                        //     echo "<img src='" . $v['image']['url'] . "' alt='" . $v['image']['title'] . "'>";
+                        // }
+
+                        foreach ($images as $k => $v) {
+                            // echo "background-image: url(" . $v['image']['url'] . ")";
+                            echo "<div class='single_main_content_right_img' style='background-image: url(" . $v['image']['url'] . ")'></div>";
                         }
                         ?>
                     </div>

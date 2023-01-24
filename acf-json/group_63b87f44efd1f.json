@@ -19,34 +19,6 @@
             "message": "",
             "new_lines": "wpautop",
             "esc_html": 0
-        },
-        {
-            "key": "field_63ca76d4e4426",
-            "label": "News",
-            "name": "news",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "news"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": ""
         }
     ],
     "location": [
@@ -55,13 +27,6 @@
                 "param": "block",
                 "operator": "==",
                 "value": "acf\/news-slider"
-            }
-        ],
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options-news-archive-settings"
             }
         ]
     ],
@@ -74,5 +39,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674213118
+    "modified": 1673035878
 }

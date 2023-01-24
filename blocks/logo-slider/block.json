@@ -1,0 +1,20 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/logo-slider",
+    "title": "Logo Slider",
+    "description": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["Bild", "Slider", "Härtha"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "style": [ "file:./index.scss" ],
+    "supports": {},
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

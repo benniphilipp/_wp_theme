@@ -6,16 +6,15 @@
  */
 
 
-function custom_taxonomy()
-{
+function custom_taxonomy() {
 
 
-    $labels = array(
-        'name'                       => __('Kategorie', 'haertha'),
-        'singular_name'              => __('Kategorien', 'haertha'),
-    );
-
-    $args = array(
+	$labels = array(
+		'name'                       => __( 'Kategorie', 'haertha' ),
+		'singular_name'              => __( 'Kategorien', 'haertha' ),
+	);
+    
+	$args = array(
         "label" => __("Kategorie", "haertha"),
         "labels" => $labels,
         "public" => true,
@@ -29,19 +28,19 @@ function custom_taxonomy()
         'show_admin_column' => true,
         "rest_controller_class" => "WP_REST_Terms_Controller",
         "show_in_quick_edit" => true,
-        'show_in_rest'      => true,
-    );
-    register_taxonomy('standort', ["standorte"], $args);
+		'show_in_rest'      => true,
+	);
+	register_taxonomy( 'standort', ["standorte"], $args  );
 
-    //Verfahren
-    $labels = array(
-        'name'                       => __('Kategorie', 'haertha'),
-        'singular_name'              => __('Kategorien', 'haertha'),
-    );
-
-    $args = array(
+	//Verfahren
+	$labels = array(
+		'name'                       => __( 'Kategorie', 'haertha' ),
+		'singular_name'              => __( 'Kategorien', 'haertha' ),
+	);
+    
+	$args = array(
         "label" => __("Kategorie", "haertha"),
-        'labels'                     => $labels,
+		'labels'                     => $labels,
         "public" => true,
         "publicly_queryable" => true,
         "hierarchical" => true,
@@ -54,20 +53,20 @@ function custom_taxonomy()
         "rest_base" => "",
         "rest_controller_class" => "WP_REST_Terms_Controller",
         "show_in_quick_edit" => true,
-        'show_in_rest' => true,
-    );
-    register_taxonomy('verfahrenstechnik', ["verfahren"], $args);
+        'show_in_rest' =>true,
+	);
+	register_taxonomy( 'verfahrenstechnik', ["verfahren"], $args );
 
 
-    //News
-    $labels = array(
-        'name'                       => __('Kategorie', 'haertha'),
-        'singular_name'              => __('Kategorien', 'haertha'),
-    );
-
-    $args = array(
+    //Team
+	$labels = array(
+		'name'                       => __( 'Kategorie', 'haertha' ),
+		'singular_name'              => __( 'Kategorien', 'haertha' ),
+	);
+    
+	$args = array(
         "label" => __("Kategorie", "haertha"),
-        'labels'                     => $labels,
+		'labels'                     => $labels,
         "public" => true,
         "publicly_queryable" => true,
         "hierarchical" => true,
@@ -75,12 +74,17 @@ function custom_taxonomy()
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
         "query_var" => true,
-        "rewrite" => array('slug' => 'new'),
+        "rewrite" => array('slug' => 'news'),
         'show_admin_column' => true,
         "rest_base" => "",
         "rest_controller_class" => "WP_REST_Terms_Controller",
         "show_in_quick_edit" => true,
-        'show_in_rest' => true,
-    );
-    register_taxonomy('new', ["news"], $args);
+        'show_in_rest' =>true,
+	);
+	register_taxonomy( 'news', ["new"], $args );
+
+
 }
+
+
+
