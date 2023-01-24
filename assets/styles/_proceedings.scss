@@ -440,49 +440,40 @@ span{
 }
 
 .verfahren-text .subline{
-  color: var(--wp--preset--color--primary);
-  font-weight: 300;
-  font-weight: 300;
+color: var(--wp--preset--color--primary);
+font-weight: 300;
+font-weight: 300;
 }
 
 .verfahren-text .content-box{
-  max-width: 730px;
-  margin: 0 auto;
-  padding: 0;
-  ul {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 1em;
-  }
-  li{
-      margin-block-start: 1rem;
-      margin-block-end: 1rem;
-  }
-  li:before{
-      display: inline-block;
-      content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjMiIHZpZXdCb3g9IjAgMCA5IDMiPgogIDxsaW5lIGlkPSJMaW5pZV8yNDEiIGRhdGEtbmFtZT0iTGluaWUgMjQxIiB4Mj0iOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxLjUpIiBmaWxsPSJub25lIiBzdHJva2U9IiM2YWI2NTEiIHN0cm9rZS13aWR0aD0iMyIvPgo8L3N2Zz4K');
-      width: 15px;
-      vertical-align: text-bottom;
-      padding-right: 1rem;
-      margin-left: -1em;
-  }
-
-  .wrapper-infotext{
-    color: var(--wp--preset--color--area);
-    padding: var(--wp--preset--spacing--30);
-    background-color: var(--wp--preset--color--primary);
-    margin: 3rem 3rem 0 3rem;
-  }
-
+max-width: 730px;
+margin: 0 auto;
+padding: 0;
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+}
+li{
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+}
+li:before{
+    display: inline-block;
+    content: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjMiIHZpZXdCb3g9IjAgMCA5IDMiPgogIDxsaW5lIGlkPSJMaW5pZV8yNDEiIGRhdGEtbmFtZT0iTGluaWUgMjQxIiB4Mj0iOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxLjUpIiBmaWxsPSJub25lIiBzdHJva2U9IiM2YWI2NTEiIHN0cm9rZS13aWR0aD0iMyIvPgo8L3N2Zz4K');
+    width: 15px;
+    vertical-align: text-bottom;
+    padding-right: 1rem;
+    margin-left: -1em;
+}
 }
 
 .verfahren-text .box{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 20px;
 }
-
 
 @media (min-width:320px)  {
 .verfahren-text .characters span,
