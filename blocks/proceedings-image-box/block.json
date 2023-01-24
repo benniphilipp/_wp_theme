@@ -1,0 +1,26 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/proceedings-image-box",
+    "title": "Verfahren Bilderbox",
+    "description": "Verfahren Bilderbox",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["Verfahren Bilderbox"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {
+        "anchor": true,
+        "alignContent": false,
+        "spacing": {
+            "padding": [ "top", "bottom" ], 
+            "margin": [ "top", "bottom" ]                          
+        }
+    },
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

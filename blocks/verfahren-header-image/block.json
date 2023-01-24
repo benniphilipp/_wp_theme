@@ -1,0 +1,30 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/verfahren-header-image",
+    "title": "Verfahren Header Bild",
+    "description": "",
+    "style": ["file:./index.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "postTypes": [
+            "verfahren", "page"
+        ]
+    },
+    "supports": {
+        "align": ["full", "size"],
+        "anchor": true,
+        "alignContent": false,
+        "spacing": {
+            "margin": [ "top", "bottom" ]                                      
+        },
+        "fullHeight": true
+    },
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

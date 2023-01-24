@@ -1,0 +1,108 @@
+{
+    "key": "group_63ad8b7554f39",
+    "title": "Optionen Verfahren Seite",
+    "fields": [
+        {
+            "key": "field_63ad8c1c9c8bb",
+            "label": "Optionen",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 1
+        },
+        {
+            "key": "field_63ad8b7555ecd",
+            "label": "Textfeld Call to Action",
+            "name": "text_cta",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_63ad8b9655ece",
+            "label": "Auswahl Kategorien Werkstofftabellen",
+            "name": "select_tables_cat",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Wählen Sie bitte die Kategorien der Werkstoffe aus.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_63ad92210d508",
+            "label": "Kontakt Standort wählen",
+            "name": "contact_location",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Der Standort wird im Kontaktbereich angezeigt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "standorte"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 0,
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "verfahren"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 1,
+    "modified": 1673019395
+}

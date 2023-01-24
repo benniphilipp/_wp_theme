@@ -1,0 +1,20 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/standort-karte",
+    "title": "Standort Karte",
+    "description": "standort-karte",
+    "style": ["file:./index.scss"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["Standort Karte"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {},
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

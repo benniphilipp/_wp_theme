@@ -1,0 +1,19 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/news-slider",
+    "title": "News Slider",
+    "description": "News Slider",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {},
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

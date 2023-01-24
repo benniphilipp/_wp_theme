@@ -1,0 +1,130 @@
+
+@use 'sass:math';
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+$custom-colors: (
+    "custom-primary": #003767,
+    "custom-secondary": #007f2e,
+    "custom-success": #C00000,
+    "custom-info": #FF5000,
+    "custom-warning": #414A51,
+    "custom-danger": #E3E3E3,
+    "custom-light": #F0F0F0,
+    "custom-dark": #00B2CE,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/tables";
+
+$tertiary: #3fb247;
+
+$custom-theme-colors:map-merge($theme-colors, (
+  "tertiary": $tertiary
+));
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+// Optional
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/dropdown";
+
+$grid-gutter-width: 1.5rem;
+$gutters: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "./load-utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+$colors: ();
+
+@import "./root";
+@import "./normalize";
+
+@import "./basic";
+
+@import "./header";
+@import "./proceedings";
+@import "./overview-proceedings";
+@import "./location";
+@import "./news";
+
+//Pages
+@import "./pages/page-hero-slider-pictures-video";
+@import "./pages/page-text-bilder-icon";
+@import "./archive-locations";
+
+@import "./pages/page-image-text-image";
+@import "./pages/page-text-image";
+@import "./pages/page-slider-individuell";
+@import "./pages/page-slider-icons-vertical";
+@import "./pages/page-large-image";
+
+
+
+
+
+//Breadcrum
+.breadcrumbs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-decoration: none;
+        list-style-type: none;
+        li {
+            color: var(--wp--preset--color--gray);
+            margin-right: 10px;
+            a {
+                text-decoration: none;
+                font-weight: 400;
+                font-family: var(--wp--preset--font-family--conduit-pro);
+                color: var(--wp--preset--color--foreground);
+            }
+        }
+    }
+    ul::before {
+        content: "";
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMS43OTgiIGhlaWdodD0iMjEuNjEiIHZpZXdCb3g9IjAgMCAyMS43OTggMjEuNjEiPgogIDxnIGlkPSJJY29uX1Rvb2wiIGRhdGEtbmFtZT0iSWNvbiBUb29sIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjkzOCAwLjg2KSI+CiAgICA8cGF0aCBpZD0iUGZhZF8yIiBkYXRhLW5hbWU9IlBmYWQgMiIgZD0iTTExMjcuOTkyLDgwNi43NDdhMy40MSwzLjQxLDAsMCwwLDEuMDItMi44MDYsNS44ODUsNS44ODUsMCwwLDEsOC4yNzktNi4wOGwtMy41MiwzLjUyYTIuMTM3LDIuMTM3LDAsMCwwLS4xNTksMi45MTMsMi4wNTgsMi4wNTgsMCwwLDAsMi45ODcuMDgxbDMuNi0zLjZhNS44ODUsNS44ODUsMCwwLDEtNi4wODEsOC4yNzgsMy40MTEsMy40MTEsMCwwLDAtMi44MDUsMS4wMmwtNi41NjYsNi41NjlhMi4zNTMsMi4zNTMsMCwwLDEtMy4zMjctMy4zMjdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTEyMC43MzQgLTc5Ny4zMykiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzZmNmY2ZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8L2c+Cjwvc3ZnPgo=");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 20px;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+//Basic
+
+.bg-w {
+    background-color: var(--wp--preset--color--area) !important;
+}
+
+//
+.container-xxl {
+    max-width: 1640px !important;
+}
+
+.container-full {
+    max-width: 100% !important;
+}

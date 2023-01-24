@@ -1,0 +1,16 @@
+#menu-posts-verfahren > a > div.wp-menu-image.dashicons-before > img,
+#menu-posts-werkstoff_tabelle > a > div.wp-menu-image.dashicons-before > img,
+#menu-posts-team > a > div.wp-menu-image.dashicons-before > img,
+#menu-posts-news > a > div.wp-menu-image.dashicons-before > img,
+#menu-posts-stellenangebote > a > div.wp-menu-image.dashicons-before > img,
+#menu-posts-downloads > a > div.wp-menu-image.dashicons-before > img,
+#menu-posts-standorte > a > div.wp-menu-image.dashicons-before > img,
+#menu-posts-team > a > div.wp-menu-image.dashicons-before > img {
+    width: 22px;
+    height: 22px;
+}
+
+#adminmenu .wp-menu-image img {
+    padding: 6px 0 0;
+    opacity: .6;
+}

@@ -1,0 +1,31 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/page-large-image",
+    "title": "Seite Grosses Bild",
+    "description": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {
+        "anchor": true,
+        "alignContent": false,
+        "align": [ "wide", "full" ],
+        "alignText": ["left", "right"],
+        "spacing": {
+            "margin": [ "top", "bottom" ]                          
+        }
+    },
+    "styles": [
+        { "name": "style_01", "label": "Style 01", "isDefault": true },
+        { "name": "style_02", "label": "Style 02" }
+    ],
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

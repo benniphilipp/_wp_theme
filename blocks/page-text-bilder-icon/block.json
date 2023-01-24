@@ -1,0 +1,36 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/page-text-bilder-icon",
+    "title": "Seite Text Bild Icon",
+    "description": "Seite Text Bild Icon",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": false
+    },
+    "supports": {
+        "anchor": true,
+        "alignContent": false,
+        "align": ["wide", "full"],
+        "alignText": ["left", "right"],
+        "spacing": {
+            "margin": ["top", "bottom"]
+        },
+        "color": {
+            "text": false,
+            "background": true,
+            "link": false
+        }
+    },
+    "styles": [
+        { "name": "style_01", "label": "Style 01", "isDefault": true },
+        { "name": "style_02", "label": "Style 02" }
+    ],
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

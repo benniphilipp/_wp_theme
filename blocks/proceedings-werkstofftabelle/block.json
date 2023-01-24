@@ -1,0 +1,19 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/verfahren-werkstofftabelle",
+    "title": "Verfahren Werkstofftabelle",
+    "description": "Verfahren Werkstofftabelle",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {},
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

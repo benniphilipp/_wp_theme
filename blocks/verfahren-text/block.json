@@ -1,0 +1,36 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/verfahren-text",
+    "title": "Verfahren Text Block",
+    "description": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "postTypes": [
+            "verfahren"
+        ]
+    },
+    "supports": {
+        "anchor": true,
+        "alignContent": false,
+        "spacing": {
+            "padding": [ "top", "bottom" ], 
+            "margin": [ "top", "bottom" ]                          
+        }
+    },
+    "attributes": {},
+    "example": {
+        "attributes": {
+            "cover": "/wp-content/haertha/arqis/preview-image/verfahren-text.png",
+            "data": {
+                "headline": "This is an example text field",
+                "text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+                "is_example" :true
+            }
+        }
+    }
+}
+

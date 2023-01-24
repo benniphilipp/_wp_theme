@@ -1,0 +1,20 @@
+
+//Backend editor CSS Admin
+
+@import "./proceedings";
+@import "./location";  
+// @import "./pages/page-text-bilder-icon";
+
+@media (min-width: 782px){
+    .interface-complementary-area {
+        width: 450px;
+    }
+}
+
+@media (min-width: 782px){
+    .interface-interface-skeleton__secondary-sidebar, .interface-interface-skeleton__sidebar {
+        position: relative !important;
+        z-index: 90;
+        width: 450px;
+    }
+}

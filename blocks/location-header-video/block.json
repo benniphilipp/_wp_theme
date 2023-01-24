@@ -1,0 +1,20 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/location-header-video",
+    "title": "Standort Header Video",
+    "description": "",
+    "style": ["file:./index.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {},
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

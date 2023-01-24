@@ -1,0 +1,21 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/location-header-image",
+    "title": "Standort Header Bilder",
+    "description": "Standort Header Bilder",
+    "style": ["file:./index.css"],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [""],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {},
+    "jsx": true,
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}

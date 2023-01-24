@@ -1,0 +1,16 @@
+{
+    "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "apiVersion": 2,
+    "name": "haertha/header-single-location",
+    "title": "Header Block Standort",
+    "description": "",
+    "category": "formatting",
+    "icon": "admin-comments",
+    "editorScript": "file:./index.js", 
+    "keywords": [],
+    "supports": {},
+    "attributes": {},
+    "example": {
+        "attributes": {}
+    }
+}
