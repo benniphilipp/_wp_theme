@@ -4,21 +4,11 @@
 function create_gutenberg_blocks_haerta() {
 
     $blocks = [
-        [ 'name' => 'text-image' ],
-        [ 'name' => 'logo-slider' ],
-        [ 'name' => 'hero-image'],
-        [ 'name' => 'lightbox-image'],
+        [ 'name' => 'page-logo-slider' ],
         [ 'name' => 'standort-karte'],
         [ 'name' => 'video-360'],
-        [ 'name' => 'slider-individuell'],
-        [ 'name' => 'inhalt-icons-vertikal'],
-        [ 'name' => 'kontakt-cta'],
-        [ 'name' => 'image-text-kombination'],
-        [ 'name' => 'big-overlay'],
-        [ 'name' => 'image-text-row'],
-        [ 'name' => 'banner'],
-        [ 'name' => 'text-image-icon'],
-        [ 'name' => 'background-image'],
+        [ 'name' => 'page-slider-individuell'],
+        [ 'name' => 'page-slider-icons-vertical'],
         [ 'name' => 'verfahren-text' ],
         [ 'name' => 'verfahren-header-image'],
         [ 'name' => 'verfahren-header-video'],
@@ -39,6 +29,15 @@ function create_gutenberg_blocks_haerta() {
         [ 'name' => 'page-hero-slider-pictures-video'],
         [ 'name' => 'page-text-bilder-icon'],
         [ 'name' => 'news-archive'],
+        [ 'name' => 'archives-locations-procedures'],
+        [ 'name' => 'archive-locations-header'],
+        [ 'name' => 'archives-locations-contact-person'],
+        [ 'name' => 'archive-locations-material'],
+        [ 'name' => 'page-image-text-image'],
+        [ 'name' => 'page-image-text'],
+        [ 'name' => 'page-large-image'],
+        [ 'name' => 'page-image-text-50-50'],
+        [ 'name' => 'page-contact-cta'],
       ];
     
       foreach($blocks as $block) {

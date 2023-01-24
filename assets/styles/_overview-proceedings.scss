@@ -75,8 +75,7 @@
             }
         }
 
-        #wrapper-ur,
-        #wrapper-locations{
+        #wrapper-ur{
             display: flex;
             list-style: none;
             margin-top: 30px;
@@ -284,26 +283,6 @@
     }
 }
 
-ul#wrapper-locations{
-    li {
-    font-size: 16px;
-}
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-}
-
-ul#wrapper-ur{
-
-    li {
-    font-size: 16px;
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-}
-
 
 @media screen and (max-width: 768px) {
     .procedures-overview{
@@ -314,100 +293,4 @@ input[type="checkbox"] {
             justify-content: space-around;
         }
     }
-}
-
-
-div#wrapper-results {
-    display: flex;
-    flex-wrap: wrap;
-    .header-img {
-        img {
-            padding: 0px 5px;
-            min-height: 270px;
-        }
-    }
-    .body {
-        margin: 0 8px 17px;
-    }
-}
-$background-color_1: #eee;
-$background-color_2: #ccc;
-$background-color_3: #2196F3;
-$background-color_4: #fff;
-
-/* Hide the browser's default checkbox */
-/* Create a custom checkbox */
-/* On mouse-over, add a grey background color */
-/* When the checkbox is checked, add a blue background */
-/* Create the checkmark/indicator (hidden when not checked) */
-/* Show the checkmark when checked */
-/* Style the checkmark/indicator */
-.container1 {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 16px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-        &:checked {
-            ~ {
-                .checkmark {
-                    background-color: $background-color_4;
-                        border: 1px solid #c3bcbc;
-                    &:after {
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
-
-    .checkmark {
-        &:after {
-            left: 9px;
-            top: 5px;
-            width: 5px;
-            height: 10px;
-            border: solid #008000;
-            border-width: 0 3px 3px 0;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-        }
-    }
-}
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: $background-color_1;
-    &:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-}
-span.main-head {
-     background: #eee;
-     padding: 10px;
-     font-weight: 700;
-     margin-bottom: 10px;
-    display: inline-block;
-    width: 100%;
-}
-
-.procedures-overview .wrapper-filter .results-display {
-    margin-bottom:30px;
 }

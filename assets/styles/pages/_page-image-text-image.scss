@@ -1,0 +1,24 @@
+
+.page-image-text-image{
+    
+    .wrapper-content{
+        
+        .body-content{
+            position: relative;
+
+            a{
+            height: 60px;
+            width: 300px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: var(--wp--preset--color--black) !important;
+            position: relative;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+        }
+    }
+
+}

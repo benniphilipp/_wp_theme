@@ -54,7 +54,6 @@ if( !empty($block['className']) ) {
 
                     <!--Location-->
                     <div id="wrapper-location-results" class="results-none">
-                        <ul id="wrapper-locations"></ul>
                     <!-- <span>überschrift</span>
                     <ul>
                         <li>Item</li>
@@ -64,7 +63,7 @@ if( !empty($block['className']) ) {
                     <!--Search-->
                     <div id="wrapper-serach-results" class="results-none">
                         <div class="wrapper">
-                            <input type="text" name="search_text" id="search_text" placeholder="Eingabe">
+                            <input type="text" placeholder="Eingabe">
                             <span class="underline"></span>
                         </div>
                     </div>

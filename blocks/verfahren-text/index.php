@@ -31,6 +31,7 @@ $headline = get_field('headline');
 $subline = get_field('subline');
 $texteditor = get_field('texteditor');
 $border = get_field('border') ? : '';
+$infotext = get_field('infotext');
 
 $style_boder ="";
 if($border != ""){
@@ -122,8 +123,18 @@ $v_toc = 'toc';
                     <div class="subline">
                         <?php echo $subline; ?>
                     </div>
-                    <?php echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" templateLock="false" />'; ?>
+                    
                     <p><?php if($texteditor): echo $texteditor; else: echo $text_placholder; endif; ?></p>
+                    <?php echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" templateLock="false" />'; ?>
+
+                    <?php if( !empty($infotext)){ ?>
+                    <div class="wrapper-infotext">
+                        <div class="body-infotext">
+                            <?php echo $infotext; ?>
+                        </div>
+                    </div>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>

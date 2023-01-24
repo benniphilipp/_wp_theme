@@ -1,0 +1,130 @@
+.bg-locations-white {
+    background-color: white;
+  }
+  
+  .archives-locations-procedures {
+    .term_name {
+      margin-bottom: 15px;
+      margin-top: 0;
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+  
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: $tertiary;
+        bottom: -4px;
+        left: 0;
+      }
+    }
+  
+    .term_post__link {
+      color: #000000;
+      font-weight: 500;
+  
+      &:hover {
+        opacity: .7;
+      }
+    }
+  
+    .term_post {
+      margin: 10px 0;
+    }
+  
+    .term_posts {
+      list-style: none;
+    }
+  
+  }
+  
+  .archives-locations-contact-person {
+    .fa-local {
+      display: inline;
+      margin-right: 7px;
+      position: relative;
+      top: 6px;
+  
+      &:before {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background-size: contain;
+      }
+  
+      &.fa-local-mail {
+        &:before {
+          content: '';
+          background-image: url("../../images/mail.svg");
+        }
+      }
+  
+      &.fa-local-tel {
+        &:before {
+          content: '';
+          background-image: url("../../images/phone-call.svg");
+        }
+      }
+    }
+  
+    .post_image {
+      img {
+        max-width: 100%;
+        object-fit: contain;
+        max-height: 266px;
+      }
+    }
+  
+    .post_email {
+      a {
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: $tertiary;
+          bottom: -4px;
+          left: 0;
+        }
+      }
+    }
+  
+    .post_email,
+    .post_tel {
+      margin-top: 25px;
+      a {
+        font-size: 26px;
+        @include media-breakpoint-down(sm){
+          font-size: 22px;
+        }
+        color: #000;
+        font-weight: 500;
+      }
+  
+    }
+  
+    .post_wrap {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .post_title {
+      font-weight: 700;
+      margin: 20px 0 15px;
+      @include media-breakpoint-down(sm){
+        margin: 15px 0 10px;
+      }
+    }
+  
+    .post_person_position {
+      color: $tertiary;
+      font-size: 28px;
+      font-weight: 700;
+      @include media-breakpoint-down(sm){
+        font-size: 28px;
+      }
+    }
+  }
