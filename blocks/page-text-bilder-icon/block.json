@@ -14,10 +14,10 @@
     "supports": {
         "anchor": true,
         "alignContent": false,
-        "align": [ "wide", "full" ],
+        "align": ["wide", "full"],
         "alignText": ["left", "right"],
         "spacing": {
-            "margin": [ "top", "bottom" ]                          
+            "margin": ["top", "bottom"]
         },
         "color": {
             "text": false,

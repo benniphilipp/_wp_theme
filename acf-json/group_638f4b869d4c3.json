@@ -1,26 +1,7 @@
 {
     "key": "group_638f4b869d4c3",
-    "title": "(Block) Inhalt Icons Vertikal",
+    "title": "(Block) Seite Slider Icons vertikal",
     "fields": [
-        {
-            "key": "field_638f4d12b44eb",
-            "label": "Inhalt Icons Vertikal",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": "",
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
         {
             "key": "field_638f4b86b44ea",
             "label": "Überschrift",
@@ -43,11 +24,11 @@
             "new_lines": ""
         },
         {
-            "key": "field_638f4d26b44ec",
-            "label": "Unterzeile",
-            "name": "subline",
+            "key": "field_63cc0760a4439",
+            "label": "Hintergrund Bild",
+            "name": "background_image",
             "aria-label": "",
-            "type": "textarea",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,17 +37,21 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 2,
-            "default_value": "",
-            "maxlength": "",
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_638f4d34b44ed",
-            "label": "Verlinkung",
-            "name": "verlinkung",
+            "label": "Button",
+            "name": "button",
             "aria-label": "",
             "type": "select",
             "instructions": "",
@@ -77,12 +62,12 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 2,
             "choices": {
-                "Externe Verlinkung": "Externe Verlinkung",
-                "Interne Verlinkung": "Interne Verlinkung"
+                "off": "Aus",
+                "link_extern": "Externer Link",
+                "link_intern": "Interner Link"
             },
-            "default_value": "Interne Verlinkung",
+            "default_value": "Aus",
             "return_format": "value",
             "multiple": 0,
             "allow_null": 0,
@@ -92,21 +77,62 @@
         },
         {
             "key": "field_638f4d5cb44ee",
-            "label": "Link",
-            "name": "link",
+            "label": "Externe URL",
+            "name": "link_extern",
             "aria-label": "",
             "type": "url",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_638f4d34b44ed",
+                        "operator": "==",
+                        "value": "link_extern"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 2,
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_63cc32a5cf8a2",
+            "label": "Interne Seiten Verlinkung",
+            "name": "link_intern",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_638f4d34b44ed",
+                        "operator": "==",
+                        "value": "link_intern"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "news",
+                "verfahren",
+                "page",
+                "standorte"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
         },
         {
             "key": "field_638f4d83b44ef",
@@ -122,7 +148,6 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 3,
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
@@ -143,8 +168,7 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 3,
-            "layout": "table",
+            "layout": "block",
             "pagination": 0,
             "min": 0,
             "max": 0,
@@ -198,8 +222,8 @@
                 },
                 {
                     "key": "field_638f4e02b44f3",
-                    "label": "Repeater Link Verlinkung",
-                    "name": "repeater_link_verlinkung_",
+                    "label": "Repeater Verlinkung",
+                    "name": "repeater_link_verlinkung",
                     "aria-label": "",
                     "type": "select",
                     "instructions": "",
@@ -210,12 +234,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 1,
                     "choices": {
-                        "Externe Verlinkung": "Externe Verlinkung",
-                        "Interne Verlinkung": "Interne Verlinkung"
+                        "off": "Aus",
+                        "link_extern": "Externer Link",
+                        "link_intern": "Interner Link"
                     },
-                    "default_value": "Interne Verlinkung",
+                    "default_value": "Aus",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -232,13 +256,20 @@
                     "type": "url",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_638f4e02b44f3",
+                                "operator": "==",
+                                "value": "link_extern"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 1,
                     "default_value": "",
                     "placeholder": "",
                     "parent_repeater": "field_638f4d90b44f0"
@@ -251,14 +282,25 @@
                     "type": "post_object",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_638f4e02b44f3",
+                                "operator": "==",
+                                "value": "link_intern"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 2,
-                    "post_type": "",
+                    "post_type": [
+                        "page",
+                        "standorte",
+                        "verfahren"
+                    ],
                     "taxonomy": "",
                     "return_format": "object",
                     "multiple": 0,
@@ -274,7 +316,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/inhalt-icons-vertikal"
+                "value": "acf\/page-slider-icons-vertical"
             }
         ]
     ],
@@ -287,5 +329,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670336292
+    "modified": 1674327996
 }

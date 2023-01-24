@@ -1,0 +1,17 @@
+{
+  "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+  "name": "haertha/page-query",
+  "title": "Seiten Query",
+  "description": "",
+  "editorScript": "file:./index.js",
+  "category": "formatting",
+  "icon": "admin-comments",
+  "keywords": [
+    ""
+  ],
+  "supports": {},
+  "attributes": {},
+  "example": {
+    "attributes": {}
+  }
+}

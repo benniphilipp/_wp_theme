@@ -1,0 +1,47 @@
+
+.page-slider-individuell{
+
+    // .swiper-slide {
+    //     flex-shrink: 500 !important;
+    // }
+
+    /*Swiper*/
+    .myIndividually {
+        width: 100%;
+        height: 100%;
+        .swiper-wrapper{
+            .swiper-slide{
+
+                .wrapper-body{
+                    
+                    .content{
+                        display: none;
+                    }
+                    .wrapper-image{
+                    
+                    }
+                }
+            }
+            .swiper-slide-next {
+ 
+            }
+            .swiper-slide-active {
+
+                .wraper-content{
+                    .wrapper-body{
+
+                        .content{
+                            display: block !important;
+                            
+                        }
+                        .wrapper-image{
+                  
+                        }   
+                    }
+                }
+            }
+        }
+    }
+
+
+}
