@@ -2,19 +2,24 @@
 
 
 // Create id attribute allowing for custom "anchor" value.
-$id = 'page-large-image' . $block['id'];
-if( !empty($block['anchor']) ) {$id = $block['anchor'];}
+$id = 'page_large_image' . $block['id'];
+if (!empty($block['anchor'])) {
+    $id = $block['anchor'];
+}
 
 
 // Create class attribute allowing for custom "className".
 $className = '';
-$styleName = '';
-//This is where Styles Support comes out. //Values "style_01 (isDefault)" "style_02" "style_03" "style_04"
-if( !empty($block['className'])) {$styleName .= ' ' . $block['className'];}
+if (!empty($block['align_text'])) {
+    $className .= 'has-align-text-' . $block['align_text'];
+}
+
 
 
 //Margin Top Bottom
-if( !empty($block['style'])) {$styles = get_block_styles($block['style']);}
+if (!empty($block['style'])) {
+    $styles = get_block_styles($block['style']);
+}
 
 
 $headline = get_field('headline');
@@ -43,14 +48,18 @@ if (!empty(get_field('button'))) {
 
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="page-large-image" style="<?php if(!empty($styles)){echo $styles[0] . $styles[1];} ?>">
+<?php /*
+<div id="<?php echo esc_attr($id); ?>" class="page-large-image" style="<?php if (!empty($styles)) {
+                                                                            echo $styles[0] . $styles[1];
+                                                                        } ?>">
 
-    <section class="<?php echo esc_attr( $className ); if(!empty($styleName)): echo esc_attr($styleName); else: echo ' is-style-style_01'; endif; ?> container-xxl">
-
-            <div class="wrap-flex">
-
-                <div class="item-left">
-                    <div class="wrapper-headline">
+    <section class="<?php echo esc_attr($className); ?> container-xxl" style="background-image: url(<?php if (!empty($image_big)) {
+                                                                                                        echo $image_big['url'];
+                                                                                                    } ?>);">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="wrapper-flex-content">
+                    <div class="wrapper-content order">
 
                         <?php if (!empty($headline)) { ?>
                             <div class="headline">
@@ -58,36 +67,33 @@ if (!empty(get_field('button'))) {
                             </div>
                         <?php } ?>
 
-                        <div class="wrapper-content">
-                            <?php if (!empty($texteditor)) { ?>
-                                <?php echo $texteditor; ?>
-                            <?php } ?>
+                        <div class="content-body">
+                            <div class="content-box">
+                                <?php if (!empty($texteditor)) { ?>
+                                    <?php echo $texteditor; ?>
+                                <?php } ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="item-right">
-                    <div class="wrapper-image">
+            </div>
+            <div class="col-lg-4 offset-lg-3">
+                <div class="wrapper-image">
+                    <div class="body-image">
                         <?php if (!empty($image_mini)) { ?>
                             <img src="<?php echo esc_url($image_mini['url']); ?>" alt="<?php echo esc_attr($image_mini['alt']); ?>" />
                         <?php } ?>
                     </div>
                 </div>
-
             </div>
-
-            <div class="underlay">
-                <div class="bg-image" style="background-image: url('<?php if(!empty($image_big)){ echo $image_big['url']; }; ?>');"></div>
-            </div>
-
+        </div>
     </section>
 
 </div>
+*/
+?>
 
-
-
-
-<!-- <div class="page_large_image">
+<div class="page_large_image">
     <div class="container">
         <div class="row ">
             <div class="col-lg-12">
@@ -122,4 +128,4 @@ if (!empty(get_field('button'))) {
             </div>
         </div>
     </div>
-</div> -->
+</div>

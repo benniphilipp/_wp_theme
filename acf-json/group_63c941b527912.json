@@ -93,11 +93,11 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_63ce219d30b9a",
-            "label": "Button",
-            "name": "button",
+            "key": "field_63c945cf4185e",
+            "label": "Interne Seiten Verlinkung",
+            "name": "link_intern",
             "aria-label": "",
-            "type": "select",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -106,77 +106,7 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "off": "Aus",
-                "link_extern": "Externer Link",
-                "link_intern": "Interner Link"
-            },
-            "default_value": false,
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_63ce21c830b9b",
-            "label": "Externer Link",
-            "name": "link_extern",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63ce219d30b9a",
-                        "operator": "==",
-                        "value": "link_extern"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_63ce21db30b9c",
-            "label": "Interne Seiten Verlinkung",
-            "name": "link_intern",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63ce219d30b9a",
-                        "operator": "==",
-                        "value": "link_intern"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "news",
-                "verfahren",
-                "standorte",
-                "page"
-            ],
-            "taxonomy": "",
-            "return_format": "object",
-            "multiple": 0,
-            "allow_null": 0,
-            "ui": 1
+            "return_format": "array"
         }
     ],
     "location": [
@@ -197,5 +127,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674453628
+    "modified": 1674135775
 }

@@ -81,16 +81,17 @@ function callbackOverviewpProceedingsDataAPI()
 add_action('rest_api_init', 'proceedingsData');
 
 
-function proceedingsData(){
+function proceedingsData()
+{
     register_rest_route('proceedingsdata/v1', 'data', array(
-        'methods' => WP_REST_SERVER::CREATABLE,
+        'methods' => WP_REST_SERVER::READABLE,
         'callback' => 'overviewpProceedingsData'
     ));
 }
 
-function overviewpProceedingsData($data){
-   
-    $locations = $_POST['locations'];
+function overviewpProceedingsData($data)
+{
+
     $proceedings = new WP_Query(array(
         'post_type' => array('verfahren', 'standorte'),
         'posts_per_page' => -1,
@@ -110,9 +111,9 @@ function overviewpProceedingsData($data){
         'categorysLocation' => array()
     );
 
-   
 
-    foreach($categorysLocation as $catVal){
+
+    foreach ($categorysLocation as $catVal) {
         array_push($results['categorysLocation'], array(
             'name' => $catVal->name,
             'id' => $catVal->term_id,
@@ -126,18 +127,19 @@ function overviewpProceedingsData($data){
         ));
     }
 
-    while($proceedings->have_posts()){
+    while ($proceedings->have_posts()) {
         $proceedings->the_post();
 
-        if(get_post_type() == 'verfahren'){
+        if (get_post_type() == 'verfahren') {
             array_push($results['proceedingsresults'], array(
                 'permalink' => get_the_permalink(),
                 'title' => get_the_title(),
-                'thumbnail' =>      get_the_post_thumbnail_url()
+                'thumbnail' =>  get_the_post_thumbnail_url(),
+                'date' =>  get_the_date(),
             ));
         }
 
-        if(get_post_type() == 'standorte'){
+        if (get_post_type() == 'standorte') {
             array_push($results['location'], array(
                 'permalink' => get_the_permalink(),
                 'title' => get_the_title()
@@ -147,24 +149,21 @@ function overviewpProceedingsData($data){
         $data_location = get_field('contact_location');
 
         if ($data_location) {
-            foreach($data_location as $item) {
+            foreach ($data_location as $item) {
 
                 array_push($results['locationresults'], array(
-                'name' => get_the_title($item),
-                'permalink' => get_the_permalink($item),
-                'verfahren' => array(
-                    'permalink' => get_the_permalink(),
-                    'title' => get_the_title()
+                    'name' => get_the_title($item),
+                    'permalink' => get_the_permalink($item),
+                    'verfahren' => array(
+                        'permalink' => get_the_permalink(),
+                        'title' => get_the_title()
                     )
                 ));
-
             }
         }
-
     }
     wp_reset_postdata();
     return $results;
-
 }
 
 
@@ -356,6 +355,9 @@ function procedureLoacationData($data)
  }
 
 
+ 
+// There has been a critical error on this website.
+//}
 
 
 

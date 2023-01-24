@@ -20,14 +20,25 @@ function news_post_ajax()
             )
         );
     }
+    if (isset($_POST['date'])) {
+        $args['date_query']['relation'] = 'OR';
+
+        foreach ($_POST['date'] as $date){
+            $args['date_query'][] = array(
+                array(
+                    'year' => explode( ',',$date )[1],
+                    'monthnum' => explode( ',', $date )[0],
+                    'compare'   => '=',
+                )
+            );
+        }
+
+    }
 
     if (isset($_POST['s'])) {
         $args['s'] = $_POST['s'];
     }
-    if (isset($_POST['date'])&&!$_POST['date']=='') {
-        $args['year'] = explode( ',', $_POST['date'] )[1];
-        $args['monthnum'] =  explode( ',', $_POST['date'] )[0];
-    }
+
 
     $loop = new WP_Query($args);
     if ($loop->have_posts()) {

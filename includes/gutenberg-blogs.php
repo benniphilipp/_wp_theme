@@ -38,7 +38,6 @@ function create_gutenberg_blocks_haerta() {
         [ 'name' => 'page-large-image'],
         [ 'name' => 'page-image-text-50-50'],
         [ 'name' => 'page-contact-cta'],
-        [ 'name' => 'location-map'], 
       ];
     
       foreach($blocks as $block) {
