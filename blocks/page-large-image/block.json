@@ -20,10 +20,6 @@
             "margin": [ "top", "bottom" ]                          
         }
     },
-    "styles": [
-        { "name": "style_01", "label": "Style 01", "isDefault": true },
-        { "name": "style_02", "label": "Style 02" }
-    ],
     "attributes": {},
     "example": {
         "attributes": {}

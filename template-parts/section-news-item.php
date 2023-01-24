@@ -3,9 +3,6 @@ $categoryList = get_the_term_list(get_the_ID(), 'new', '', ',');
 ?>
 <div class="col-md-6">
 
-    <div class="header-img">
-        <?php the_post_thumbnail('full'); ?>
-    </div>
 
     <div class="procedures_box">
         <div class="procedures_box-top_bar">
@@ -17,6 +14,10 @@ $categoryList = get_the_term_list(get_the_ID(), 'new', '', ',');
             <a href="#"
                class="procedures_box-main-time"><?php echo get_the_date('d . m . Y', $post->ID); ?></a>
         </div>
+        <div class="header-img">
+            <?php the_post_thumbnail('full'); ?>
+        </div>
+
         <div class="procedures_box-content">
             <h5 class="procedures_box-sub_title"><?php echo get_the_title($post->ID); ?></h5>
 

@@ -417,12 +417,55 @@
     }
 }
 .news-archive-block {
+    .procedures_box {
+        .header-img img {
+            @include media-breakpoint-up(sm) {
+                max-height: 300px;
+                min-height: 300px;
+                height: 100%;
+            }
+            object-fit: cover;
+        }
+
+        .procedures_box-main-title {
+            @include media-breakpoint-up(sm) {
+                max-width: 73%;
+            }
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .ajax-news-row.load {
+        position: relative;
+        &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: $tertiary;
+            opacity: 0;
+            animation: pulse-news 2s infinite;
+            position: absolute;
+        }
+    }
+
+    .date-select {
+        padding-left: 3px;
+    }
+
     .date-select, .news-input-search {
         background-color: transparent;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
         border: none;
+        width: 100%;
+        color: #454545;
 
         &::placeholder {
-            color: #000;
+            color: #454545;
         }
 
         &:focus {
@@ -430,7 +473,7 @@
         }
     }
 
-    .news-input-search ~ .search {
+    .search-filter {
         cursor: pointer;
     }
 
@@ -442,8 +485,12 @@
         }
     }
 
-    .news-category__wrap {
+    .news-category__wrap ,.news-date__wrap {
         list-style: none;
+
+        .item {
+            padding: 5px 0;
+        }
 
         column-count: 4;
         @include media-breakpoint-down(xl) {
@@ -453,22 +500,106 @@
             column-count: 2;
         }
         @include media-breakpoint-down(sm) {
-            column-count: 2;
+            column-count: 1;
         }
 
         input {
-            margin-right: 15px;
+
+            padding: 0;
+            height: initial;
+            width: initial;
+            margin-bottom: 0;
+            display: none;
+            cursor: pointer;
+
+            &:checked + label.label:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 2px;
+                left: 9px;
+                width: 6px;
+                height: 14px;
+                border: solid $tertiary;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+        }
+
+
+        .label {
+            position: relative;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                -webkit-appearance: none;
+                background-color: transparent;
+                border: 2px solid $tertiary;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+                padding: 10px;
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                cursor: pointer;
+                margin-right: 5px;
+            }
         }
     }
 
-    .category-list {
+    .news-filter-col {
+        border-bottom: 1px solid #000000;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .close-button-none {
+        position: relative;
+        display: flex;
+        max-width: 320px;
+        float: right;
+        padding: 10px;
+        margin-top: 30px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .category-toggle,.date-toggle  {
+        font-weight: 400;
+        display: flex;
+        cursor: pointer;
+
+        &.active {
+            background-color: #3fb24736;
+        }
+    }
+
+    .category-list,.date-list {
         position: absolute;
         left: 0;
         width: 100%;
         background-color: white;
+        z-index: 111;
+
 
         &:not(.active) {
             display: none;
+
         }
+    }
+}
+
+@keyframes pulse-news {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .7;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

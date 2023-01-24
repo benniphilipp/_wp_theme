@@ -2,7 +2,7 @@
     "schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
     "name": "acf/page-hero-slider-pictures-video",
     "title": "Seite Hero Slider Bilder und Video",
-    "description": "",
+    "description": "Seite Hero Slider Bilder und Video",
     "category": "formatting",
     "icon": "admin-comments",
     "keywords": [""],
@@ -17,7 +17,9 @@
         "attributes": {}
     },
     "styles": [
-        { "name": "style_01", "label": "Style 01", "isDefault": true },
-        { "name": "style_02", "label": "Style 02" }
+        { "name": "fullbleed_01", "label": "Fullbleed 01", "isDefault": true },
+        { "name": "fullbleed_02", "label": "Fullbleed 02" },
+        { "name": "fullbleed_03", "label": "Fullbleed 03" },
+        { "name": "fullbleed_04", "label": "Fullbleed 04" }
     ]
 }

@@ -1,5 +1,3 @@
-
-
 import ContactData from "./modules/Contact-data";
 import ProceedingData from "./modules/Overview-proceedings";
 import LocationData from "./modules/Location";
@@ -320,73 +318,93 @@ jQuery(document).ready(function ($) {
   }).on('focus', e => closetNewsModalCategory(e.target))
       .on('click', e => closetNewsModalCategory(e.target))
 
-  // closet Modal Category
-  function closetNewsModalCategory(e) {
-    jQuery(e).closest('.news-archive-block').find('.wrapper-filter').addClass('active')
-    jQuery(e).closest('.news-archive-block').find('.category-list').removeClass('active')
-  }
-  // search button
-  jQuery('.news-input-search ~ .search').on('click', e => ajaxNews(e.target))
-
-  // trigger category modal
-  jQuery('.category-toggle').on('click', function (e) {
-    const parent = $(e.target).closest('.news-archive-block')
-    parent.find('.category-list').toggleClass('active')
-    // check if close section category
-    if (parent.find('.category-list').hasClass('active')) {
-      parent.find('.wrapper-filter').addClass('active')
-    } else {
-      parent.find('.wrapper-filter').removeClass('active')
+    // closet Modal Category
+    function closetNewsModalCategory(e) {
+        jQuery(e).closest('.news-archive-block').find('.wrapper-filter').removeClass('active')
+        jQuery(e).closest('.news-archive-block').find('.news-filter-col.category-toggle,.news-filter-col.date-toggle').removeClass('active')
+        jQuery(e).closest('.news-archive-block').find('.filter-modal .active').removeClass('active')
     }
-  })
 
-// Click Other section  hide category and remove background
-  jQuery(document).click(function (event) {
-    if (!$(event.target).closest(".wrapper-filter").length) {
-      $('.category-list').removeClass('active')
-      $('.wrapper-filter').removeClass('active')
-    }
-  });
+    // search button
+    jQuery('.search-filter').on('click', e => ajaxNews(e.target))
 
-  jQuery('.date-select')
-      .on('change', e => ajaxNews(e.target))
-      .on('focus', e => closetNewsModalCategory(e.target))
-      .on('focusout', function (e) {
-        $(e.target).closest('.news-archive-block').find('.wrapper-filter').removeClass('active')
-      })
+    // trigger category and date modal
+    jQuery('.date-toggle,.category-toggle').on('click', function (e) {
+        e.preventDefault()
+        console.log(e)
+        const parent = $(e.target).closest('.news-archive-block'),
+            target = $(e.target).data('class') ? $(e.target) : $(e.target).closest('.news-filter-col')
 
 
-  jQuery('.news-category__input').on('click', e => ajaxNews(e.target))
+        console.log(target)
+        // check if close section category
+        if (parent.find('.' + target.data('class')).hasClass('active')) {
+            parent.find('.wrapper-filter').removeClass('active')
+            parent.find('.news-filter-col.active').removeClass('active')
+            parent.find('.filter-modal .active').removeClass('active')
+        } else {
+            parent.find('.news-filter-col.active').removeClass('active')
+            parent.find('.filter-modal .active').removeClass('active')
+            parent.find('.wrapper-filter').addClass('active')
+            parent.find('.' + target.data('class')).addClass('active')
+            target.addClass('active')
+        }
 
-// ajax
-  function ajaxNews(element) {
-    let val = []
-    $(element).closest('.news-archive-block').find('.news-category__input:checked').each(function () {
-      val.push(jQuery(this).val());
     })
 
-    $(element).closest('.news-archive-block').find('.wrapper-filter').addClass('active')
-    let s = $(element).closest('.news-archive-block').find('.news-input-search').val()
+// Click Other section  hide category and remove background
+    jQuery(document).click(function (event) {
+        if (!$(event.target).closest(".wrapper-filter").length) {
+            $('.category-list,.date-list').removeClass('active')
+            $('.news-filter-col.active').removeClass('active')
+            $('.wrapper-filter').removeClass('active')
+        }
+    });
 
-    let date = $(element).closest('.news-archive-block').find('.date-select').val()
-    let nonce = $(element).closest('.news-archive-block').find('[name=news_post_ajax_of_nonce_field]').val()
-    let objectPost = {
-      action: "news_post_ajax",
-      term: val, s,
-      nonce, date,
+    jQuery('.date-select')
+        .on('change', e => ajaxNews(e.target))
+        .on('focus', e => closetNewsModalCategory(e.target))
+        .on('click', e => closetNewsModalCategory(e.target))
+        .on('focusout', function (e) {
+            $(e.target).closest('.news-archive-block').find('.wrapper-filter').removeClass('active')
+        })
 
+
+    jQuery('.filter-modal .close-button-none').on('click', function (e) {
+        e.preventDefault();
+        ajaxNews(e.target)
+    })
+
+// ajax
+    function ajaxNews(element) {
+        let term = []
+        $(element).closest('.news-archive-block').find('.news-category__input:checked').each(function () {
+            term.push(jQuery(this).val());
+        })
+        let date = []
+        $(element).closest('.news-archive-block').find('.news-date__input:checked').each(function () {
+            date.push(jQuery(this).val());
+        })
+
+        let s = $(element).closest('.news-archive-block').find('.news-input-search').val()
+        let nonce = $(element).closest('.news-archive-block').find('[name=news_post_ajax_of_nonce_field]').val()
+        let objectPost = {
+            action: "news_post_ajax",
+            term, s,
+            nonce, date,
+
+        }
+        if (nonce) {
+
+            $.post(proceedingsData.ajax, objectPost)
+                .success(function (posts) {
+
+                    closetNewsModalCategory(element)
+                    $(element).closest('.news-archive-block').find('.ajax-news-row').html(posts);
+
+                });
+        }
     }
-    if (nonce) {
-
-      $.post(proceedingsData.ajax, objectPost)
-          .success(function (posts) {
-            $(element).closest('.news-archive-block').find('.wrapper-filter').removeClass('active')
-            $(element).closest('.news-archive-block').find('.category-list').removeClass('active')
-            $(element).closest('.news-archive-block').find('.ajax-news-row').html(posts);
-
-          });
-    }
-  }
 
 })
 
