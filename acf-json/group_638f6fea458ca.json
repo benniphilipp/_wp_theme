@@ -16,26 +16,6 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_63c59f0bc6a55",
-            "label": "Background",
-            "name": "bg_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
             "return_format": "array",
             "library": "all",
             "min_width": "",
@@ -285,7 +265,7 @@
             "label": "Video",
             "name": "video",
             "aria-label": "",
-            "type": "url",
+            "type": "oembed",
             "instructions": "",
             "required": 0,
             "conditional_logic": [
@@ -302,8 +282,8 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "width": "",
+            "height": ""
         }
     ],
     "location": [

@@ -62,16 +62,3 @@ function add_menu_a_class($ulclass) {
     return preg_replace('/<a /', '<a class="a-link"', $ulclass);
  }
  add_filter('wp_nav_menu','add_menu_a_class');
-
-// Acf Create News Archive Options Page
-
-function haertha_create_acf_pages() {
-    if(function_exists('acf_add_options_page')) {
-        acf_add_options_sub_page(array(
-            'page_title'      => 'News Archive Settings', /* Use whatever title you want */
-            'parent_slug'     => 'edit.php?post_type=news', /* Change "services" to fit your situation */
-            'capability' => 'manage_options'
-        ));
-    }
-}
-add_action('init', 'haertha_create_acf_pages');

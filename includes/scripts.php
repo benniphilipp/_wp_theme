@@ -22,8 +22,9 @@ function scripts_hearta() {
 
     //Import JS
     wp_localize_script('main-js', 'proceedingsData', array(
-        'root_url' => get_site_url(),'ajax' => admin_url('admin-ajax.php')
+        'root_url' => get_site_url()
     ));
+          
 }
 
 

@@ -1,0 +1,53 @@
+{
+    "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json",
+    "name": "acf/text-image",
+    "title": "Testimonial",
+    "description": "A custom testimonial block.",
+    "style": [ "file:./testimonial.css" ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["testimonial", "quote"],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "index.php",
+        "reusable": true
+    },
+    "supports": {
+        "align": true,
+        "anchor": true,
+        "color": {
+            "text": true,
+            "background": true,
+            "link": true
+        },
+        "alignText": true,
+        "spacing": {
+            "margin": true
+        }
+    },
+    "styles": [
+        { "name": "default", "label": "Default", "isDefault": true },
+        { "name": "other", "label": "Other" }
+    ],
+    "attributes": {
+        "marginSpacing":{
+            "type": "string",
+            "default": ""   
+        },
+        "backgroundColor": {
+            "type": "string",
+            "default": ""
+        },
+        "textColor":{
+            "type": "string",
+            "default": ""
+        },
+        "linkColor":{
+            "type": "string",
+            "default": ""
+        }
+    },
+    "example": {
+        "attributes": {}
+    }
+}
